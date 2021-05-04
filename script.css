@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Crete Round', serif;
+}
+
+.heading h1{
+    font-size: 40px;
+}
+.heading {
+    border-bottom: 3px solid black;
+}
+.button {
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 50px;
+    max-width: 1100px;
+}
+
+.container input{
+    margin: 0 auto;
+    width: 50%;
+}
+.report {
+    margin: 30px auto;
+    width: 80%;
+    display: none;
+}
+.addingBlue{
+    background-color: rgb(135, 176, 236);
+    border: 2px solid rgb(255, 251, 193);
+}
+.addingGrey {
+    background-color: rgb(199, 199, 199);
+    border: 2px solid rgb(142, 154, 170);
+} 
+.addingWhite {
+    background-color: rgb(237, 249, 255);
+    border: 2px solid rgb(112, 143, 245);
+} 
+.report h4{
+    font-size: 34px;
+}
+.report p {
+    font-size: 28px;
+    font-weight: bold;
+}
+.tempIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.report p:nth-child(1) {
+    display: inline;
+    margin-right: 20px;
+}
+.forcast {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: none;
+    width: 80%;
+}
+.forcast span {
+    border: 2px solid rgb(170, 170, 170);
+    width: 100px;
+    margin: 20px;
+}
+@media(max-width: 922px) {
+    .container {
+        width: 60%;
+    }
+    .report {
+        width: 80%;
+    }
+}
+
+@media(max-width: 580px) {
+    .container {
+        width: 90%;
+
+    }
+    .report {
+        width: 100%;
+    }
+}
