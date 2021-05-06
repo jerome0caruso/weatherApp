@@ -65,6 +65,9 @@ function getDate(i) {
     const days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const date = new Date();
     const day = date.getDay();
+    if(i > 6) { // Helps keep the index in range
+        i = 0;
+    }
     return {
         today: new Date().toLocaleString(),
         name: days[i]
@@ -76,6 +79,7 @@ function loadForcast(forcast) {
     document.querySelector('.forcast').setAttribute("style", "display: flex;");
     let i = 0;
     allDays.forEach(day => {
+        console.log(getDate(i + new Date().getDay()).name)
         day.innerHTML = `<p>${getDate(i + new Date().getDay()).name}</p>
                          <h3>${Math.round(forcast.daily[i].temp.day)}℉ </h3>
                          <h4>${forcast.daily[i].weather[0].description}</h4>`;
