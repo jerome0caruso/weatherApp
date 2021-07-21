@@ -64,13 +64,14 @@ function getForcast(locations) {
 function getDate(i) {
     const days = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     const date = new Date();
-    const day = date.getDay();
-    if(i > 6) { // Helps keep the index in range
-        i = 0;
+    const day = date.getDay();//is index of days today is 5
+    let changer = i + day;
+    if(changer > 6) {
+        changer = changer - 7;
     }
     return {
         today: new Date().toLocaleString(),
-        name: days[i]
+        name: days[changer]
     }
 }
 // creates the main view for the 5 day forcast.  Use the i variable with ++ instead of another loop.  Need to loop through each day as well as each span in view area.
@@ -78,9 +79,10 @@ function getDate(i) {
 function loadForcast(forcast) {
     document.querySelector('.forcast').setAttribute("style", "display: flex;");
     let i = 0;
+    console.log(allDays.length)
     allDays.forEach(day => {
-        console.log(getDate(i + new Date().getDay()).name)
-        day.innerHTML = `<p>${getDate(i + new Date().getDay()).name}</p>
+        console.log(forcast)
+        day.innerHTML = `<p>${getDate(i).name}</p>
                          <h3>${Math.round(forcast.daily[i].temp.day)}℉ </h3>
                          <h4>${forcast.daily[i].weather[0].description}</h4>`;
         i++;
